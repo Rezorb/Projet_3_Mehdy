@@ -47,18 +47,17 @@ table {
   border-spacing: 0;
 }
 
-/** end reset css**/
-/* BASE */
 body {
   max-width: 1140px;
   margin: auto;
+  padding: 50px 50px;
   font-family: "Work Sans";
   font-size: 14px;
   background-color: #FFFEF8;
 }
 
 section {
-  margin: 70px 0;
+  margin: 80px 100px;
 }
 
 h1 {
@@ -68,12 +67,14 @@ h1 {
   font-size: 22px;
   font-weight: 800;
   color: #B1663C;
+  gap: 6px;
 }
 
 h1 > span {
   font-family: "Work Sans";
   font-size: 10px;
   letter-spacing: 0.1em;
+  font-weight: 400;
 }
 
 h2 {
@@ -81,6 +82,15 @@ h2 {
   font-weight: 700;
   font-size: 30px;
   color: #1D6154;
+}
+
+h3 {
+  font-family: "Work Sans";
+  font-weight: 400;
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 20px;
 }
 
 .portfolio-title h2 {
@@ -94,13 +104,21 @@ nav ul {
 }
 
 nav li {
-  padding: 0 10px;
-  font-size: 1.2em;
+  padding: 0 20px;
+  font-size: 16px;
+}
+
+remove:before, .fa-times:before, .fa-xmark:before {
+  font-size: 23px;
+}
+
+.fa-arrow-left:before {
+  font-size: 23px;
 }
 
 img[src="./assets/icons/instagram.png"] {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
 }
 
 li:hover {
@@ -118,12 +136,12 @@ li:hover {
 
 #introduction img {
   display: block;
-  margin: auto;
-  width: 80%;
+  width: 474px;
+  height: 355px;
 }
 
 #introduction article {
-  flex: 1;
+  width: 404px;
 }
 
 figure .admin__modifer {
@@ -135,11 +153,11 @@ article .admin__modifer {
 }
 
 #introduction h2 {
-  margin-bottom: 1em;
+  margin-bottom: 20px;
 }
 
 #introduction p {
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 .gallery {
@@ -147,26 +165,26 @@ article .admin__modifer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-row-gap: 40px;
 }
 
 .gallery img {
-  width: 100%;
-  height: 92.5%;
+  width: 305px;
+  height: 407px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 figcaption {
-  margin-top: 10px;
+  margin-top: 5px;
   font-family: "Work Sans";
   font-size: 1em;
-  color: #1D6154;
+  color: #3D3D3D;
 }
 
 figure {
   width: 100%;
-  height: 500px;
+  height: 407px;
 }
 
 #introduction figure {
@@ -174,7 +192,6 @@ figure {
   height: auto;
 }
 
-/* TYPO */ /* ANIM */
 html {
   scroll-behavior: smooth;
 }
@@ -200,7 +217,6 @@ html {
   color: #B1663C;
 }
 
-/* MODALE GALERIE PHOTO  */
 .modale[aria-hidden=true] {
   animation-name: fadeOff;
 }
@@ -209,95 +225,16 @@ html {
   animation-name: slideFromBottom;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes slideFromTop {
-  from {
-    transform: translateY(-75px);
-  }
-  to {
-    transform: translateY(0px);
-  }
-}
-@keyframes fadeOff {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes slideFromBottom {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(75px);
-  }
-}
-.modale .js-modale-projet:hover {
-  color: #1D6154;
-  background-color: white;
-  scale: 1.05;
+::selection {
+  background-color: transparent;
 }
 
-/* MODALE AJOUT PROJET  */
 .modale-projet[aria-hidden=true] .modale-wrapper {
   animation-name: slideFromBottom;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes slideFromTop {
-  from {
-    transform: translateY(-75px);
-  }
-  to {
-    transform: translateY(0px);
-  }
-}
-@keyframes fadeOff {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes slideFromBottom {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(75px);
-  }
-}
-.form-group-photo label:hover {
-  background-color: #306685;
-  color: white;
-}
+/*** Admin ***/
 
-.modale-projet-form input[type=submit]:hover {
-  color: #1D6154;
-  background-color: white;
-  scale: 1.05;
-  cursor: pointer;
-}
-
-/* ADMIN */
-/* ADMIN EDITION MODE  */
 .admin__rod {
   position: fixed;
   right: 0;
@@ -306,7 +243,7 @@ html {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 40px;
+  height: 59px;
   background-color: black;
 }
 
@@ -336,9 +273,11 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 50px;
 }
 
-/* MODALE  GALERIE PHOTO*/
+/*** Modale - Galerie ***/
+
 .modale {
   position: fixed;
   top: 0;
@@ -358,10 +297,12 @@ html {
   overflow: auto;
   max-width: calc(98vh - 20px);
   max-height: calc(98vh - 20px);
-  width: 675px;
+  width: 630px;
+  height: 670px;
   padding: 30px;
   background-color: white;
   animation: slideFromTop 0.2s both;
+  border-radius: 10px;
 }
 
 .js-modale-close {
@@ -392,46 +333,46 @@ html {
 .js-admin-projets::after {
   display: flex;
   content: " ";
-  border-top: 1px solid black;
+  border-top: 1px solid #B3B3B3;
   height: 1px;
-  width: 90%;
+  width: 100%;
   margin: 40px auto;
 }
 
 .js-admin-projets {
-  width: 550px;
-  margin: 10px auto;
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  max-width: 430px;
+  margin: 10px auto;
 }
 
 .gallery__item-modale {
-  display: flex;
-  flex-direction: column;
-  margin: 0 5px;
-  width: 95px;
+  width: calc(20% - 10px);
+  height: 120px;
 }
 
 .gallery__item-modale img {
-  width: 95px;
-  height: 120px;
+  width: 76.86px;
+  height: 102.57px;
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 5px;
 }
 
 .fa-trash-alt:before, .fa-trash-can:before {
-  /* position: relative; */
   color: white;
   background-color: black;
   padding: 5px;
   border-radius: 20%;
+  font-size: 10px;
 }
 
 .gallery__item-modale p {
   position: relative;
-  bottom: 116px;
-  left: 68px;
+  bottom: 100px;
+  left: 53px;
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -452,13 +393,14 @@ html {
   background-color: #1D6154;
   border: 2px solid #1D6154;
   margin: 0 auto 30px auto;
-  height: 50px;
+  height: 36px;
   width: 250px;
   border-radius: 60px;
   transition: all 0.5s ease;
 }
 
-/* MODALE AJOUT PROJET */
+/*** Modale - Ajout de projet ***/
+
 .modale-projet {
   position: fixed;
   top: 0;
@@ -478,7 +420,7 @@ html {
   align-items: center;
 }
 
-/* FORM */
+/*** Form ***/
 #contact {
   width: 50%;
   margin: auto;
@@ -581,14 +523,29 @@ html {
   justify-content: center;
   align-items: center;
   background-color: #E8F1F7;
-  width: 500px;
-  height: 200px;
-  border-radius: 10px;
+  width: 420px;
+  height: 169px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.form-group-photo img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.centered-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .form-group-photo i {
-  color: #306685;
-  font-size: 90px;
+  color: #B9C5CC;
+  font-size: 70px;
   font-weight: 100;
   margin: 20px;
   margin-top: -25px;
@@ -610,23 +567,30 @@ html {
   border-radius: 50px;
   cursor: pointer;
   margin-top: -10px;
+  font-weight: 700;
 }
 
 .form-group-photo::after {
   content: "jpg, png : 4mo max";
-  position: absolute;
-  top: 315px;
+  position: relative;
+  padding-top: 5px;
+  color: #444444;
+  font-size: 10px;
+}
+
+.form-group-photo.has-image::after {
+  display: none;
 }
 
 .form-group-title {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 420px;
 }
 
 .form-group-title input {
   height: 50px;
-  font-size: 1.2em;
+  font-size: 14px;
   border: none;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
@@ -638,12 +602,12 @@ html {
 .form-group-id {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 420px;
 }
 
 .form-group-id select {
   height: 50px;
-  font-size: 1.2em;
+  font-size: 14px;
   border: none;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
@@ -657,44 +621,45 @@ html {
   font-weight: 700;
   color: white;
   background-color: #1D6154;
-  border: 2px solid #1D6154;
-  margin: 120px 0 30px 0;
-  height: 50px;
-  width: 250px;
+  margin: 80px 0 30px 0;
+  height: 36px;
+  width: 237px;
   text-align: center;
   border-radius: 60px;
-  transition: all 0.5s ease;
+  border: 2px;
+  cursor: pointer;
 }
 
 .modale-projet-form::after {
   content: " ";
-  border-top: 1px solid black;
+  border-top: 1px solid #B3B3B3;
   height: 1px;
-  width: 70%;
+  width: 420px;
   margin: 40px auto;
   position: absolute;
-  bottom: 120px;
+  bottom: 90px;
 }
 
 a {
   text-decoration: none;
-  color: #1D6154;
+  color: #000000;
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  margin: 50px 0;
+  margin-top: 50px;
+  margin-bottom: 140px;
 }
 
-/* FOOTER */
+/*** Footer ***/
 footer nav ul {
   display: flex;
   justify-content: flex-end;
   margin: 2em;
 }
 
-/* FILTER */
+/*** Filters ***/
 .error {
   grid-column: 2;
   margin: 30px 0;
@@ -711,11 +676,11 @@ footer nav ul {
 .filter__btn, .btn-admin {
   font-family: "Syne";
   padding: 10px 20px;
-  margin: 0 15px;
+  margin: 0 5px;
   border: 1px solid #1D6154;
   border-radius: 25px;
   color: #1D6154;
-  background-color: white;
+  background-color: #FFFEF8;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -727,7 +692,7 @@ footer nav ul {
   background-color: #1D6154;
 }
 
-/* LOGIN */
+/*** Login ***/
 .login {
   display: flex;
   flex-direction: column;
@@ -740,5 +705,3 @@ footer nav ul {
   text-decoration: underline;
   margin-bottom: 100px;
 }
-
-/* VARIABLES *//*# sourceMappingURL=main.css.map */
